@@ -2,6 +2,7 @@
   margin-top: 50px;
   padding: 20px 0px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   color: var(--softTextColor);
  }
@@ -37,7 +38,7 @@
  .links{
   flex: 1;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 100px;
  }
 
