@@ -19,7 +19,7 @@ const getData = async (slug) => {
 const SinglePage = async ({ params }) => {
   const { slug } = params;
 
-  const data = await getData(slug);
+  //const data = await getData(slug);
 
   return (
     <div className={styles.container}>
