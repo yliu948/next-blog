@@ -6,7 +6,11 @@ const trim = (string) => {
   return string.substring(3, string.length - 4);
 };
 
-const Card = ({ key, item }) => {
+const Card = ({ item, key }) => {
+  //console.log(item);
+  const time = item.createdAt;
+  //console.log(time);
+
   return (
     <div className={styles.container} key={key}>
       {item.img && (
@@ -17,7 +21,8 @@ const Card = ({ key, item }) => {
       <div className={styles.textContainer}>
         <div className={styles.detail}>
           <span className={styles.date}>
-            {item.createdAt.substring(0, 10)} -{" "}
+            {/* {item.createdAt.substring(0, 10)} - {item.createdAt} */}
+            {item.createdAt.toString().substring(0, 25)} -{" "}
           </span>
           <span className={styles.category}>{item.catSlug}</span>
         </div>
