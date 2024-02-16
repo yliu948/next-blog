@@ -6,6 +6,7 @@ import Image from "next/image";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
+import { NEXT_URL } from "@/utils/config";
 
 const fetcher = async (url) => {
   const res = await fetch(url);

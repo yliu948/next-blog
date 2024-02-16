@@ -15,11 +15,11 @@ const getData = async () => {
 };
 
 const MenuCategories = async () => {
-  //const data = await getData();
+  const data = await getData();
   //const data = await prisma.category.findMany();
   return (
     <div className={styles.categoryList}>
-      {/* {data?.map((item) => (
+      {data?.map((item) => (
         <Link
           href={`/blog?cat=${item.slug}`}
           className={`${styles.categoryItem} ${styles[item.slug]}`}
@@ -27,7 +27,7 @@ const MenuCategories = async () => {
         >
           {item.title}
         </Link>
-      ))} */}
+      ))}
     </div>
   );
 };

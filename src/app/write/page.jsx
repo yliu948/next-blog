@@ -147,9 +147,9 @@ const WritePage = () => {
           placeholder="Tell your story..."
         />
       </div>
-      {/* <button className={styles.publish} onClick={handleSubmit}>
+      <button className={styles.publish} onClick={handleSubmit}>
         Publish
-      </button> */}
+      </button>
     </div>
   );
 };

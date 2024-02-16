@@ -19,11 +19,11 @@ const getData = async (slug) => {
 const SinglePage = async ({ params }) => {
   const { slug } = params;
 
-  //const data = await getData(slug);
+  const data = await getData(slug);
 
   return (
     <div className={styles.container}>
-      {/* <div className={styles.infoContainer}>
+      <div className={styles.infoContainer}>
         <div className={styles.textContainer}>
           <h1 className={styles.title}>{data?.title}</h1>
           <div className={styles.user}>
@@ -60,7 +60,7 @@ const SinglePage = async ({ params }) => {
           </div>
         </div>
         <Menu />
-      </div> */}
+      </div>
     </div>
   );
 };
