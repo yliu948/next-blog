@@ -1,13 +1,25 @@
+.container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 
+.select{
+  margin-bottom: 50px;
+  padding: 10px 20px;
+  margin-left: 50px;
+  width: max-content;
+}
 
-.editor{
+.editor {
   display: flex;
   gap: 20px;
   height: 700px;
   position: relative;
 }
 
-.button, .addButton{
+.button,
+.addButton {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -19,11 +31,11 @@
   cursor: pointer;
 }
 
-.addButton{
+.addButton {
   border-color: #1a8917;
 }
 
-.add{
+.add {
   display: flex;
   gap: 20px;
   background-color: var(--bg);
@@ -39,20 +51,21 @@
   border: none;
   outline: none;
   background-color: transparent;
+  color: var(--textColor);
 }
 
 .input::placeholder{
   color: #b3b3b1;
 }
 
-.textArea{
+.textArea {
   width: 100%;
 }
 
 .publish{
   position: absolute;
-  top: 30px;
-  right: 20px;
+  top: 0px;
+  right: 0px;
   padding: 10px 20px;
   border: none;
   background-color: #1a8917;

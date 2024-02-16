@@ -4,21 +4,24 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && prisma generate && <actual-build-command>",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.3.3",
     "@prisma/client": "^5.9.1",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
+    "firebase": "^10.8.0",
     "next": "13.4.19",
     "next-auth": "^4.24.5",
     "quill": "^1.3.7",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
-    "react-quill": "^2.0.0"
+    "react-quill": "^2.0.0",
+    "swr": "^2.2.4"
   },
   "devDependencies": {
     "encoding": "^0.1.13",

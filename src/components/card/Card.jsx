@@ -2,26 +2,30 @@ import styles from "./card.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
+const trim = (string) => {
+  return string.substring(3, string.length - 4);
+};
+
 const Card = ({ key, item }) => {
   return (
     <div className={styles.container} key={key}>
-      <div className={styles.imageContainer}>
-        <Image src="/p1.jpeg" alt="" fill className={styles.image} />
-      </div>
+      {item.img && (
+        <div className={styles.imageContainer}>
+          <Image src={item.img} alt="" fill className={styles.image} />
+        </div>
+      )}
       <div className={styles.textContainer}>
         <div className={styles.detail}>
-          <span className={styles.date}>2023-09-18 - </span>
-          <span className={styles.category}>CULTURE</span>
+          <span className={styles.date}>
+            {item.createdAt.substring(0, 10)} -{" "}
+          </span>
+          <span className={styles.category}>{item.catSlug}</span>
         </div>
-        <Link href="/">Read More</Link>
-        <h1>{item.title}</h1>
-        <p className={styles.desc}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-          perspiciatis nemo fugit repudiandae quis doloribus cum, molestias
-          ratione, sapiente culpa autem ex possimus distinctio eaque nesciunt
-          aut ipsam odit alias.
-        </p>
-        <Link href="/" className={styles.link}>
+        <Link href={`/posts/${item.slug}`}>
+          <h1>{item.title}</h1>
+        </Link>
+        <p className={styles.desc}>{trim(item.desc).substring(0, 60)}</p>
+        <Link href={`/posts/${item.slug}`} className={styles.link}>
           Read More
         </Link>
       </div>
