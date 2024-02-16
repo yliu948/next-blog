@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./categoryList.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import prisma from "@/utils/connect";
 
 // const getData = async () => {
 //   const res = await fetch("http://localhost:3000/api/categories", {
