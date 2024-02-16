@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import styles from "./menuCategories.module.css";
 import prisma from "@/utils/connect";
-import { NEXT_URL } from "@/utils/config";
 
 const MenuCategories = async () => {
   const data = await prisma.category.findMany();
