@@ -45,7 +45,7 @@ const AuthLinks = () => {
             <Link href="/login">Login</Link>
           ) : (
             <>
-              <Link href="/write">Write</Link>
+              {/* <Link href="/write">Write</Link> */}
               <span className={styles.link}>Logout</span>
             </>
           )}
