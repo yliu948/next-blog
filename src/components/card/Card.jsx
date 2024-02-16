@@ -9,7 +9,7 @@ const trim = (string) => {
 const Card = ({ item, key }) => {
   //console.log(item);
   const time = item.createdAt;
-  //console.log(time);
+  console.log(typeof item);
 
   return (
     <div className={styles.container} key={key}>
