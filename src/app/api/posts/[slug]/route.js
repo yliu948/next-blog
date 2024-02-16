@@ -1,8 +1,7 @@
-import { getAuthSession } from "@/utils/auth";
 import prisma from "@/utils/connect";
 import { NextResponse } from "next/server";
 
-// Get single post
+// GET SINGLE POST
 export const GET = async (req, { params }) => {
   const { slug } = params;
 

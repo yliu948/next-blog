@@ -7,7 +7,7 @@ export const GET = async (req) => {
   const { searchParams } = new URL(req.url);
 
   const postSlug = searchParams.get("postSlug");
-  //console.log(postSlug);
+
   try {
     const comments = await prisma.comment.findMany({
       where: {
@@ -25,7 +25,7 @@ export const GET = async (req) => {
   }
 };
 
-// create a comment
+// CREATE A COMMENT
 export const POST = async (req) => {
   const session = await getAuthSession();
 
@@ -43,7 +43,7 @@ export const POST = async (req) => {
 
     return new NextResponse(JSON.stringify(comment, { status: 200 }));
   } catch (err) {
-    // console.log(err);
+    console.log(err);
     return new NextResponse(
       JSON.stringify({ message: "Something went wrong!" }, { status: 500 })
     );
