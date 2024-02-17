@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import styles from "./writePage.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import dynamic from "next/dynamic";
 import {
   getStorage,
   ref,
@@ -13,11 +14,15 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
-import ReactQuill from "react-quill";
+//import ReactQuill from "react-quill";
 
 const WritePage = () => {
   const { status } = useSession();
   const router = useRouter();
+  const ReactQuill = useMemo(
+    () => dynamic(() => import("react-quill"), { ssr: false }),
+    []
+  );
 
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState(null);
@@ -139,13 +144,13 @@ const WritePage = () => {
             </button>
           </div>
         )}
-        {/* <ReactQuill
-            className={styles.textArea}
-            theme="bubble"
-            value={value}
-            onChange={setValue}
-            placeholder="Tell your story..."
-          /> */}
+        <ReactQuill
+          className={styles.textArea}
+          theme="bubble"
+          value={value}
+          onChange={setValue}
+          placeholder="Tell your story..."
+        />
       </div>
       <button className={styles.publish} onClick={handleSubmit}>
         Publish
