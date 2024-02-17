@@ -94,9 +94,8 @@ const WritePage = () => {
       router.push(`/posts/${data.slug}`);
     }
   };
-
-  return (
-    typeof window !== "undefined" && (
+  if (typeof document !== "undefined") {
+    return (
       <div className={styles.container}>
         <input
           type="text"
@@ -152,8 +151,8 @@ const WritePage = () => {
           Publish
         </button>
       </div>
-    )
-  );
+    );
+  }
 };
 
 export default WritePage;
